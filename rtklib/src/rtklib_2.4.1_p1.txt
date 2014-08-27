@@ -1,0 +1,22 @@
+rtklib 2.4.1 patch 1
+2011/08/19
+
+(1) rtknavi, rtknavi_mkl, rtkrcv
+the following problem fixed:
+the ephemeris and ssr-corrections are temporaly unavailable at
+ephemeris switch for realtime-ppp
+
+(2) rtkrcv
+the following problem fixed:
+segmentation fault when some operations
+
+(3) rtkpost, rtkpost_mkl
+the following problem fixed:
+drag and drop to the input file 1 field is disabled
+
+(4) rtkplot
+menu file - brows solutions and file - save # of sats/dops are added
+
+(4) all
+suppress warnings when compiling the source programs by gcc
+

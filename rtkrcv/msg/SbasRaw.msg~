@@ -1,0 +1,10 @@
+#Raw SBAS message
+
+#Week number
+int32 week
+#Time of week
+int32 tow
+#SBAS satellite RPN number
+uint8 prn
+#Raw message
+uint8[29] msg

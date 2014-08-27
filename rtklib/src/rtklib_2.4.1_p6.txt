@@ -1,0 +1,13 @@
+rtklib 2.4.1 patch 6
+2012/05/11
+
+(1) rtknavi,rtkrcv
+the following problem fixed:
+- For real-time PPP, v.2.4.1 comply with RTCM 3 SSR draft version (April 12, 2010)
+  for corrections. The RTCM recently has published the final version as Amendment
+  5 [1], which changed several message formats from the draft. If SSR corrections
+  comply with Amendment 5, PPP is not enabled due to the imcompatibility of
+  correction message formats.
+  [1] RTCM Standard 10403.1 - Amendment 5, Differential GNSS (Global Navigation 
+      Satellite Systems) Services - version 3, July 1, 2011
+

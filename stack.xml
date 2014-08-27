@@ -1,0 +1,14 @@
+<stack>
+	<description brief="gnss">
+		
+		Tools for working with Global Navigation Satellite Systems.
+
+	</description>
+	<author>Maintained by Fraunhofer IIS</author>
+	<license>BSD</license>
+	<review status="unreviewed" notes=""/>
+	<url>http://ros.org/wiki/gnss</url>
+	<depend stack="ros"/>	
+	<depend stack="roscpp"/>
+	<depend stack="rospy"/>
+</stack>

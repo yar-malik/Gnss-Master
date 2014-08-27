@@ -1,0 +1,11 @@
+rtklib 2.4.1 patch 7
+2012/06/09
+
+(1) all
+the following problem fixed:
+- after 2012-6-30, utc time is 1 second ahead of the true time.
+
+(2) rtknavi,rtkrcv,strsvr,str2str
+the following problem fixed:
+- user name contains "/", the login failed.
+

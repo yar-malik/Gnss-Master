@@ -1,0 +1,7 @@
+rtklib 2.4.1 patch 2
+2011/08/21
+
+(1) rtkpost, rtkpost_mkl, rnx2rtkp
+the following problem fixed:
+the program freezes if option solstatic=single and soltype=combined
+

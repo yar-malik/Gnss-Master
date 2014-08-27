@@ -1,0 +1,7 @@
+#Satellite observation
+Header header
+
+#Number of the satellite (1-32 for GPS)
+uint8 sat
+#Signal observations for different frequencies
+SignalObservation[] observations

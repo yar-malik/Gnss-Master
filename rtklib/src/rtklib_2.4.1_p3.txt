@@ -1,0 +1,7 @@
+rtklib 2.4.1 patch 3
+2011/11/08
+
+(1) rtkpost, rtkpost_mkl, rtknavi, rtknavi_mkl, rnx2rtkp, rtkrcv
+the following problem fixed:
+snr mask option is disabled in single-mode
+

@@ -1,0 +1,7 @@
+rtklib 2.4.1 patch 4
+2011/11/29
+
+(1) str2str
+the following problem fixed:
+"ntrips://..." stream as -out option is not recognized.
+

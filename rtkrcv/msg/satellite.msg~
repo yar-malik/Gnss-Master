@@ -1,0 +1,8 @@
+#N
+#Characteristics of on one satellite   
+
+  int32 id
+  int32 sys
+  int32 vs
+  float64 asimuth
+  float64 elevationq

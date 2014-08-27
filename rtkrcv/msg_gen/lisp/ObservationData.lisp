@@ -1,0 +1,321 @@
+; Auto-generated. Do not edit!
+
+
+(cl:in-package rtkrcv-msg)
+
+
+;//! \htmlinclude ObservationData.msg.html
+
+(cl:defclass <ObservationData> (roslisp-msg-protocol:ros-message)
+  ((time
+    :reader time
+    :initarg :time
+    :type cl:real
+    :initform 0)
+   (sat
+    :reader sat
+    :initarg :sat
+    :type cl:fixnum
+    :initform 0)
+   (rcv
+    :reader rcv
+    :initarg :rcv
+    :type cl:fixnum
+    :initform 0)
+   (SNR
+    :reader SNR
+    :initarg :SNR
+    :type (cl:vector cl:fixnum)
+   :initform (cl:make-array 0 :element-type 'cl:fixnum :initial-element 0))
+   (LLI
+    :reader LLI
+    :initarg :LLI
+    :type (cl:vector cl:fixnum)
+   :initform (cl:make-array 0 :element-type 'cl:fixnum :initial-element 0))
+   (code
+    :reader code
+    :initarg :code
+    :type (cl:vector cl:fixnum)
+   :initform (cl:make-array 0 :element-type 'cl:fixnum :initial-element 0))
+   (L
+    :reader L
+    :initarg :L
+    :type (cl:vector cl:float)
+   :initform (cl:make-array 0 :element-type 'cl:float :initial-element 0.0))
+   (P
+    :reader P
+    :initarg :P
+    :type (cl:vector cl:float)
+   :initform (cl:make-array 0 :element-type 'cl:float :initial-element 0.0))
+   (D
+    :reader D
+    :initarg :D
+    :type (cl:vector cl:float)
+   :initform (cl:make-array 0 :element-type 'cl:float :initial-element 0.0)))
+)
+
+(cl:defclass ObservationData (<ObservationData>)
+  ())
+
+(cl:defmethod cl:initialize-instance :after ((m <ObservationData>) cl:&rest args)
+  (cl:declare (cl:ignorable args))
+  (cl:unless (cl:typep m 'ObservationData)
+    (roslisp-msg-protocol:msg-deprecation-warning "using old message class name rtkrcv-msg:<ObservationData> is deprecated: use rtkrcv-msg:ObservationData instead.")))
+
+(cl:ensure-generic-function 'time-val :lambda-list '(m))
+(cl:defmethod time-val ((m <ObservationData>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader rtkrcv-msg:time-val is deprecated.  Use rtkrcv-msg:time instead.")
+  (time m))
+
+(cl:ensure-generic-function 'sat-val :lambda-list '(m))
+(cl:defmethod sat-val ((m <ObservationData>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader rtkrcv-msg:sat-val is deprecated.  Use rtkrcv-msg:sat instead.")
+  (sat m))
+
+(cl:ensure-generic-function 'rcv-val :lambda-list '(m))
+(cl:defmethod rcv-val ((m <ObservationData>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader rtkrcv-msg:rcv-val is deprecated.  Use rtkrcv-msg:rcv instead.")
+  (rcv m))
+
+(cl:ensure-generic-function 'SNR-val :lambda-list '(m))
+(cl:defmethod SNR-val ((m <ObservationData>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader rtkrcv-msg:SNR-val is deprecated.  Use rtkrcv-msg:SNR instead.")
+  (SNR m))
+
+(cl:ensure-generic-function 'LLI-val :lambda-list '(m))
+(cl:defmethod LLI-val ((m <ObservationData>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader rtkrcv-msg:LLI-val is deprecated.  Use rtkrcv-msg:LLI instead.")
+  (LLI m))
+
+(cl:ensure-generic-function 'code-val :lambda-list '(m))
+(cl:defmethod code-val ((m <ObservationData>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader rtkrcv-msg:code-val is deprecated.  Use rtkrcv-msg:code instead.")
+  (code m))
+
+(cl:ensure-generic-function 'L-val :lambda-list '(m))
+(cl:defmethod L-val ((m <ObservationData>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader rtkrcv-msg:L-val is deprecated.  Use rtkrcv-msg:L instead.")
+  (L m))
+
+(cl:ensure-generic-function 'P-val :lambda-list '(m))
+(cl:defmethod P-val ((m <ObservationData>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader rtkrcv-msg:P-val is deprecated.  Use rtkrcv-msg:P instead.")
+  (P m))
+
+(cl:ensure-generic-function 'D-val :lambda-list '(m))
+(cl:defmethod D-val ((m <ObservationData>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader rtkrcv-msg:D-val is deprecated.  Use rtkrcv-msg:D instead.")
+  (D m))
+(cl:defmethod roslisp-msg-protocol:serialize ((msg <ObservationData>) ostream)
+  "Serializes a message object of type '<ObservationData>"
+  (cl:let ((__sec (cl:floor (cl:slot-value msg 'time)))
+        (__nsec (cl:round (cl:* 1e9 (cl:- (cl:slot-value msg 'time) (cl:floor (cl:slot-value msg 'time)))))))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) __sec) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) __sec) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) __sec) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) __sec) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 0) __nsec) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) __nsec) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) __nsec) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) __nsec) ostream))
+  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'sat)) ostream)
+  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'rcv)) ostream)
+  (cl:let ((__ros_arr_len (cl:length (cl:slot-value msg 'SNR))))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) __ros_arr_len) ostream))
+  (cl:map cl:nil #'(cl:lambda (ele) (cl:write-byte (cl:ldb (cl:byte 8 0) ele) ostream))
+   (cl:slot-value msg 'SNR))
+  (cl:let ((__ros_arr_len (cl:length (cl:slot-value msg 'LLI))))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) __ros_arr_len) ostream))
+  (cl:map cl:nil #'(cl:lambda (ele) (cl:write-byte (cl:ldb (cl:byte 8 0) ele) ostream))
+   (cl:slot-value msg 'LLI))
+  (cl:let ((__ros_arr_len (cl:length (cl:slot-value msg 'code))))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) __ros_arr_len) ostream))
+  (cl:map cl:nil #'(cl:lambda (ele) (cl:write-byte (cl:ldb (cl:byte 8 0) ele) ostream))
+   (cl:slot-value msg 'code))
+  (cl:let ((__ros_arr_len (cl:length (cl:slot-value msg 'L))))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) __ros_arr_len) ostream))
+  (cl:map cl:nil #'(cl:lambda (ele) (cl:let ((bits (roslisp-utils:encode-double-float-bits ele)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 32) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 40) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 48) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 56) bits) ostream)))
+   (cl:slot-value msg 'L))
+  (cl:let ((__ros_arr_len (cl:length (cl:slot-value msg 'P))))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) __ros_arr_len) ostream))
+  (cl:map cl:nil #'(cl:lambda (ele) (cl:let ((bits (roslisp-utils:encode-double-float-bits ele)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 32) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 40) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 48) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 56) bits) ostream)))
+   (cl:slot-value msg 'P))
+  (cl:let ((__ros_arr_len (cl:length (cl:slot-value msg 'D))))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) __ros_arr_len) ostream))
+  (cl:map cl:nil #'(cl:lambda (ele) (cl:let ((bits (roslisp-utils:encode-single-float-bits ele)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) bits) ostream)))
+   (cl:slot-value msg 'D))
+)
+(cl:defmethod roslisp-msg-protocol:deserialize ((msg <ObservationData>) istream)
+  "Deserializes a message object of type '<ObservationData>"
+    (cl:let ((__sec 0) (__nsec 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) __sec) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) __sec) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) __sec) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) __sec) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 0) __nsec) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) __nsec) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) __nsec) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) __nsec) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'time) (cl:+ (cl:coerce __sec 'cl:double-float) (cl:/ __nsec 1e9))))
+    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'sat)) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'rcv)) (cl:read-byte istream))
+  (cl:let ((__ros_arr_len 0))
+    (cl:setf (cl:ldb (cl:byte 8 0) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 8) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 16) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 24) __ros_arr_len) (cl:read-byte istream))
+  (cl:setf (cl:slot-value msg 'SNR) (cl:make-array __ros_arr_len))
+  (cl:let ((vals (cl:slot-value msg 'SNR)))
+    (cl:dotimes (i __ros_arr_len)
+    (cl:setf (cl:ldb (cl:byte 8 0) (cl:aref vals i)) (cl:read-byte istream)))))
+  (cl:let ((__ros_arr_len 0))
+    (cl:setf (cl:ldb (cl:byte 8 0) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 8) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 16) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 24) __ros_arr_len) (cl:read-byte istream))
+  (cl:setf (cl:slot-value msg 'LLI) (cl:make-array __ros_arr_len))
+  (cl:let ((vals (cl:slot-value msg 'LLI)))
+    (cl:dotimes (i __ros_arr_len)
+    (cl:setf (cl:ldb (cl:byte 8 0) (cl:aref vals i)) (cl:read-byte istream)))))
+  (cl:let ((__ros_arr_len 0))
+    (cl:setf (cl:ldb (cl:byte 8 0) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 8) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 16) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 24) __ros_arr_len) (cl:read-byte istream))
+  (cl:setf (cl:slot-value msg 'code) (cl:make-array __ros_arr_len))
+  (cl:let ((vals (cl:slot-value msg 'code)))
+    (cl:dotimes (i __ros_arr_len)
+    (cl:setf (cl:ldb (cl:byte 8 0) (cl:aref vals i)) (cl:read-byte istream)))))
+  (cl:let ((__ros_arr_len 0))
+    (cl:setf (cl:ldb (cl:byte 8 0) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 8) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 16) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 24) __ros_arr_len) (cl:read-byte istream))
+  (cl:setf (cl:slot-value msg 'L) (cl:make-array __ros_arr_len))
+  (cl:let ((vals (cl:slot-value msg 'L)))
+    (cl:dotimes (i __ros_arr_len)
+    (cl:let ((bits 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 32) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 40) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 48) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 56) bits) (cl:read-byte istream))
+    (cl:setf (cl:aref vals i) (roslisp-utils:decode-double-float-bits bits))))))
+  (cl:let ((__ros_arr_len 0))
+    (cl:setf (cl:ldb (cl:byte 8 0) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 8) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 16) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 24) __ros_arr_len) (cl:read-byte istream))
+  (cl:setf (cl:slot-value msg 'P) (cl:make-array __ros_arr_len))
+  (cl:let ((vals (cl:slot-value msg 'P)))
+    (cl:dotimes (i __ros_arr_len)
+    (cl:let ((bits 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 32) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 40) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 48) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 56) bits) (cl:read-byte istream))
+    (cl:setf (cl:aref vals i) (roslisp-utils:decode-double-float-bits bits))))))
+  (cl:let ((__ros_arr_len 0))
+    (cl:setf (cl:ldb (cl:byte 8 0) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 8) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 16) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 24) __ros_arr_len) (cl:read-byte istream))
+  (cl:setf (cl:slot-value msg 'D) (cl:make-array __ros_arr_len))
+  (cl:let ((vals (cl:slot-value msg 'D)))
+    (cl:dotimes (i __ros_arr_len)
+    (cl:let ((bits 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) bits) (cl:read-byte istream))
+    (cl:setf (cl:aref vals i) (roslisp-utils:decode-single-float-bits bits))))))
+  msg
+)
+(cl:defmethod roslisp-msg-protocol:ros-datatype ((msg (cl:eql '<ObservationData>)))
+  "Returns string type for a message object of type '<ObservationData>"
+  "rtkrcv/ObservationData")
+(cl:defmethod roslisp-msg-protocol:ros-datatype ((msg (cl:eql 'ObservationData)))
+  "Returns string type for a message object of type 'ObservationData"
+  "rtkrcv/ObservationData")
+(cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<ObservationData>)))
+  "Returns md5sum for a message object of type '<ObservationData>"
+  "2414e19a8314b63733505d032ad576fc")
+(cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'ObservationData)))
+  "Returns md5sum for a message object of type 'ObservationData"
+  "2414e19a8314b63733505d032ad576fc")
+(cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<ObservationData>)))
+  "Returns full string definition for message of type '<ObservationData>"
+  (cl:format cl:nil " # observation data records~%~%time time             # receiver sampling time (GPST)~%uint8 sat             # satellite~%uint8 rcv             # receiver number~%uint8[] SNR           # signal strength (0.25 dBHz)~%uint8[] LLI           # loss of lock indicator~%uint8[] code          # code indicator (CODE_???)~%float64[] L           # observation data carrier-phase (cycle)~%float64[] P           # observation data pseudorange (m)~%float32[] D           # observation data doppler frequency (Hz)~%~%~%"))
+(cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'ObservationData)))
+  "Returns full string definition for message of type 'ObservationData"
+  (cl:format cl:nil " # observation data records~%~%time time             # receiver sampling time (GPST)~%uint8 sat             # satellite~%uint8 rcv             # receiver number~%uint8[] SNR           # signal strength (0.25 dBHz)~%uint8[] LLI           # loss of lock indicator~%uint8[] code          # code indicator (CODE_???)~%float64[] L           # observation data carrier-phase (cycle)~%float64[] P           # observation data pseudorange (m)~%float32[] D           # observation data doppler frequency (Hz)~%~%~%"))
+(cl:defmethod roslisp-msg-protocol:serialization-length ((msg <ObservationData>))
+  (cl:+ 0
+     8
+     1
+     1
+     4 (cl:reduce #'cl:+ (cl:slot-value msg 'SNR) :key #'(cl:lambda (ele) (cl:declare (cl:ignorable ele)) (cl:+ 1)))
+     4 (cl:reduce #'cl:+ (cl:slot-value msg 'LLI) :key #'(cl:lambda (ele) (cl:declare (cl:ignorable ele)) (cl:+ 1)))
+     4 (cl:reduce #'cl:+ (cl:slot-value msg 'code) :key #'(cl:lambda (ele) (cl:declare (cl:ignorable ele)) (cl:+ 1)))
+     4 (cl:reduce #'cl:+ (cl:slot-value msg 'L) :key #'(cl:lambda (ele) (cl:declare (cl:ignorable ele)) (cl:+ 8)))
+     4 (cl:reduce #'cl:+ (cl:slot-value msg 'P) :key #'(cl:lambda (ele) (cl:declare (cl:ignorable ele)) (cl:+ 8)))
+     4 (cl:reduce #'cl:+ (cl:slot-value msg 'D) :key #'(cl:lambda (ele) (cl:declare (cl:ignorable ele)) (cl:+ 4)))
+))
+(cl:defmethod roslisp-msg-protocol:ros-message-to-list ((msg <ObservationData>))
+  "Converts a ROS message object to a list"
+  (cl:list 'ObservationData
+    (cl:cons ':time (time msg))
+    (cl:cons ':sat (sat msg))
+    (cl:cons ':rcv (rcv msg))
+    (cl:cons ':SNR (SNR msg))
+    (cl:cons ':LLI (LLI msg))
+    (cl:cons ':code (code msg))
+    (cl:cons ':L (L msg))
+    (cl:cons ':P (P msg))
+    (cl:cons ':D (D msg))
+))

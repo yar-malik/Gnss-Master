@@ -1,0 +1,47 @@
+<launch>
+	
+<node pkg="rtkrcv" type="rtkrcv" name="rtkrcv" args="-m 3006">		
+		
+		<param name="pos1_posmode" value="single"/>
+		<param name="pos1_frequency" value="l1"/>
+		<param name="pos1_soltype" value="forward"/>
+		<param name="pos1_elmask" value="5"/>
+		<param name="pos1_snrmask" value="0"/>
+		
+		<param name="pos1_dynamics" value="off"/>
+		<param name="pos1_tidecorr" value="off"/>
+		
+		<param name="pos1_ionoopt" value="brdc"/>
+		<param name="pos1_tropopt" value="saas"/>
+		<param name="pos1_sateph" value="brdc"/>
+		<param name="pos1_navsys" value="1"/>
+		
+		<param name="out_solformat" value="llh"/>
+		<param name="out_timesys" value="utc"/>
+		<param name="out_timeform" value="hms"/>
+		<param name="out_timendec" value="3"/>
+		<param name="out_degform" value="deg"/>
+		<param name="out_outstat" value="residual"/>
+		
+		<param name="inpstr1_type" value="file"/>
+		<param name="inpstr1_path" value="/home/asfandyar/gnss-master/rov_201211301201.log"/>
+		<param name="inpstr1_format" value="skytraq"/>
+		
+		<param name="outstr1_type" value="tcpsvr"/>
+		<param name="outstr1_path" value=":@:3333/:"/>
+		<param name="outstr1_format" value="enu"/>
+	
+	</node>
+
+
+	<!--node pkg="tf" type="static_transform_publisher" name="sat_data" args="1.0 0.0 0.0 0.0 1.0 0.0 /world /some_link 100" /-->
+
+		
+	<!--node pkg="rtklib" type="enu_to_pose.py" name="enu_single" output="screen">
+		<param name="host" value="localhost"/>
+		<param name="port" value="3333"/>
+		<param name="publish_tf" value="true"/>
+		<param name="base_frame_id" value="base_footprint"/>	
+        </node-->
+	
+</launch>

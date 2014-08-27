@@ -1,0 +1,15 @@
+rtklib 2.4.1 patch 5
+2011/12/21
+
+(1) rtknavi,strsvr
+the following problem fixed:
+if the ntrip option "User-ID" contains "@", a memory access exception
+occures.
+
+(2) rtkrcv, str2str
+the following problem fixed:
+- if the ntrip path does not contains "[:passwd]", memory access
+exception occures.
+- if user in the ntrip path contains "@", the path is not properly
+recognized.
+
